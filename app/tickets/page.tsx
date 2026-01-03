@@ -1,8 +1,10 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, ArrowRight } from "lucide-react"
-import Image from "next/image"
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import AddToCart from "@/components/add-to-cart";
 
 export default function TicketsPage() {
   const events = [
@@ -13,7 +15,8 @@ export default function TicketsPage() {
       date: "Dec 27, 2025 8:00 PM GMT+1",
       price: "NGN 10,000",
       image: "/images/screenshot-202026-01-01-20at-209.png",
-      description: "Heat wave is back! But this time around the vibe is seasoned with salt! come ready to have fun!",
+      description:
+        "Heat wave is back! But this time around the vibe is seasoned with salt! come ready to have fun!",
     },
     {
       id: 2,
@@ -22,7 +25,8 @@ export default function TicketsPage() {
       date: "Dec 22, 2025 6:00 AM GMT+1",
       price: "NGN 7,875",
       image: "/green-neon-jeleel-concert-poster.jpg",
-      description: "Jeleel and cykers live in lagos. get ready for an unforgettable night of stacked performances",
+      description:
+        "Jeleel and cykers live in lagos. get ready for an unforgettable night of stacked performances",
     },
     {
       id: 3,
@@ -31,7 +35,8 @@ export default function TicketsPage() {
       date: "Jul 10, 2026 6:00 PM GMT+1",
       price: "EUR 250",
       image: "/afro-beats-festival-beach-sunset.jpg",
-      description: "The biggest afrobeats festival returns to Portugal with international headliners",
+      description:
+        "The biggest afrobeats festival returns to Portugal with international headliners",
     },
     {
       id: 4,
@@ -40,7 +45,8 @@ export default function TicketsPage() {
       date: "Dec 30, 2025 10:00 PM GMT+1",
       price: "NGN 15,000",
       image: "/detty-december-party-lights.jpg",
-      description: "Ring in the new year with the ultimate party experience featuring top DJs and performers",
+      description:
+        "Ring in the new year with the ultimate party experience featuring top DJs and performers",
     },
     {
       id: 5,
@@ -49,7 +55,8 @@ export default function TicketsPage() {
       date: "Jun 15, 2026 5:00 PM GMT",
       price: "GBP 45",
       image: "/outdoor-jazz-concert-park.jpg",
-      description: "Experience smooth jazz under the stars with world-renowned artists in a beautiful outdoor setting",
+      description:
+        "Experience smooth jazz under the stars with world-renowned artists in a beautiful outdoor setting",
     },
     {
       id: 6,
@@ -58,9 +65,10 @@ export default function TicketsPage() {
       date: "Aug 20, 2026 8:00 PM GMT",
       price: "GBP 75",
       image: "/burna-boy-concert-stage.jpg",
-      description: "African Giant brings his electrifying performance to London for one night only",
+      description:
+        "African Giant brings his electrifying performance to London for one night only",
     },
-  ]
+  ];
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -82,7 +90,8 @@ export default function TicketsPage() {
                 </h1>
               </div>
               <p className="max-w-xs text-[11px] font-bold uppercase tracking-widest text-muted-foreground leading-loose">
-                Filter by continent or genre to find your next unforgettable cultural moment.
+                Filter by continent or genre to find your next unforgettable
+                cultural moment.
               </p>
             </div>
           </div>
@@ -120,14 +129,14 @@ export default function TicketsPage() {
                         {event.title}
                       </h2>
                     </div>
-
                     <div className="flex flex-wrap gap-8">
                       <div className="space-y-1">
                         <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground">
                           Location
                         </span>
                         <p className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
-                          <MapPin className="h-3 w-3 text-green-primary" /> {event.location}
+                          <MapPin className="h-3 w-3 text-green-primary" />{" "}
+                          {event.location}
                         </p>
                       </div>
                       <div className="space-y-1">
@@ -135,29 +144,47 @@ export default function TicketsPage() {
                           Date & Time
                         </span>
                         <p className="text-sm font-bold text-white uppercase tracking-widest flex items-center gap-2">
-                          <Calendar className="h-3 w-3 text-green-primary" /> {event.date}
+                          <Calendar className="h-3 w-3 text-green-primary" />{" "}
+                          {event.date}
                         </p>
                       </div>
                     </div>
-
                     <p className="text-sm font-medium leading-loose text-muted-foreground max-w-xl uppercase tracking-wider opacity-70">
                       {event.description}
                     </p>
-
                     <div className="pt-8 flex flex-col sm:flex-row sm:items-center justify-between border-t border-white/5 gap-8">
                       <div className="space-y-1">
                         <span className="text-[9px] font-black uppercase tracking-widest text-muted-foreground">
                           Entry Fee
                         </span>
-                        <p className="text-3xl font-black text-accent">{event.price}</p>
+                        <p className="text-3xl font-black text-accent">
+                          {event.price}
+                        </p>
                       </div>
                       <Button
+                        asChild
                         size="lg"
                         className="h-16 px-12 rounded-full bg-green-primary text-black font-bold hover:bg-white hover:text-black transition-all group shadow-xl"
                       >
-                        Secure Access
-                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                        <Link href={`/tickets/${event.id}`}>
+                          <>
+                            Secure Access
+                            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                          </>
+                        </Link>
                       </Button>
+                      <div className="mt-4 w-full sm:w-44">
+                        <AddToCart
+                          item={{
+                            id: event.id,
+                            title: event.title,
+                            price: event.price,
+                            currency:
+                              event.price?.toString().split(" ")[0] || "",
+                            image: event.image,
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -168,5 +195,5 @@ export default function TicketsPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

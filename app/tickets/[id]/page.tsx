@@ -1,10 +1,19 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, MapPin, Clock, Users, Ticket, Share2, Heart } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Calendar,
+  MapPin,
+  Clock,
+  Users,
+  Ticket,
+  Share2,
+  Heart,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import AddToCart from "@/components/add-to-cart";
 
 export default function EventDetailPage() {
   // In a real app, this would fetch data based on the dynamic [id] param
@@ -26,9 +35,9 @@ export default function EventDetailPage() {
     ticketsSold: 1543,
     categories: ["Music Festival", "Party", "Live Performance"],
     organizer: "Camp Cyk Presents",
-  }
+  };
 
-  const ticketsRemaining = event.capacity - event.ticketsSold
+  const ticketsRemaining = event.capacity - event.ticketsSold;
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -37,15 +46,29 @@ export default function EventDetailPage() {
       <main className="flex-1 bg-background">
         {/* Hero Image Section */}
         <section className="relative h-[50vh] w-full overflow-hidden border-b border-border md:h-[60vh]">
-          <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-cover" priority />
+          <Image
+            src={event.image || "/placeholder.svg"}
+            alt={event.title}
+            fill
+            className="object-cover"
+            priority
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
 
           {/* Action Buttons Overlay */}
           <div className="absolute right-4 top-4 flex gap-2">
-            <Button size="icon" variant="secondary" className="h-10 w-10 rounded-full">
+            <Button
+              size="icon"
+              variant="secondary"
+              className="h-10 w-10 rounded-full"
+            >
               <Share2 className="h-5 w-5" />
             </Button>
-            <Button size="icon" variant="secondary" className="h-10 w-10 rounded-full">
+            <Button
+              size="icon"
+              variant="secondary"
+              className="h-10 w-10 rounded-full"
+            >
               <Heart className="h-5 w-5" />
             </Button>
           </div>
@@ -68,8 +91,12 @@ export default function EventDetailPage() {
                       </span>
                     ))}
                   </div>
-                  <h1 className="text-balance text-4xl font-bold text-foreground sm:text-5xl">{event.title}</h1>
-                  <p className="mt-2 text-lg text-muted-foreground">Presented by {event.organizer}</p>
+                  <h1 className="text-balance text-4xl font-bold text-foreground sm:text-5xl">
+                    {event.title}
+                  </h1>
+                  <p className="mt-2 text-lg text-muted-foreground">
+                    Presented by {event.organizer}
+                  </p>
                 </div>
 
                 <Card className="bg-card">
@@ -78,50 +105,76 @@ export default function EventDetailPage() {
                       <Calendar className="mt-1 h-5 w-5 text-primary" />
                       <div>
                         <p className="font-semibold text-foreground">Date</p>
-                        <p className="text-sm text-muted-foreground">{event.date}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {event.date}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Clock className="mt-1 h-5 w-5 text-primary" />
                       <div>
                         <p className="font-semibold text-foreground">Time</p>
-                        <p className="text-sm text-muted-foreground">{event.time}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {event.time}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="mt-1 h-5 w-5 text-primary" />
                       <div>
-                        <p className="font-semibold text-foreground">Location</p>
-                        <p className="text-sm text-muted-foreground">{event.location}</p>
-                        <p className="text-sm text-muted-foreground">{event.venue}</p>
+                        <p className="font-semibold text-foreground">
+                          Location
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {event.location}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {event.venue}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Users className="mt-1 h-5 w-5 text-primary" />
                       <div>
-                        <p className="font-semibold text-foreground">Capacity</p>
-                        <p className="text-sm text-muted-foreground">{ticketsRemaining} tickets remaining</p>
+                        <p className="font-semibold text-foreground">
+                          Capacity
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {ticketsRemaining} tickets remaining
+                        </p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold text-foreground">About This Event</h2>
-                  <p className="text-pretty leading-relaxed text-muted-foreground">{event.description}</p>
-                  <p className="text-pretty leading-relaxed text-muted-foreground">{event.longDescription}</p>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    About This Event
+                  </h2>
+                  <p className="text-pretty leading-relaxed text-muted-foreground">
+                    {event.description}
+                  </p>
+                  <p className="text-pretty leading-relaxed text-muted-foreground">
+                    {event.longDescription}
+                  </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-bold text-foreground">What to Expect</h2>
+                  <h2 className="text-2xl font-bold text-foreground">
+                    What to Expect
+                  </h2>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>World-class DJ performances throughout the night</span>
+                      <span>
+                        World-class DJ performances throughout the night
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>Multiple stages with different vibes and music genres</span>
+                      <span>
+                        Multiple stages with different vibes and music genres
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -129,7 +182,9 @@ export default function EventDetailPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>Secure parking and professional event security</span>
+                      <span>
+                        Secure parking and professional event security
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -140,7 +195,9 @@ export default function EventDetailPage() {
                 <Card className="sticky top-20 bg-card">
                   <CardContent className="space-y-6 p-6">
                     <div>
-                      <p className="text-sm text-muted-foreground">Ticket Price</p>
+                      <p className="text-sm text-muted-foreground">
+                        Ticket Price
+                      </p>
                       <div className="mt-1 flex items-baseline gap-2">
                         <span className="text-4xl font-bold text-foreground">
                           {event.currency} {event.price.toLocaleString()}
@@ -152,7 +209,9 @@ export default function EventDetailPage() {
                       <div className="flex items-center justify-between rounded-lg bg-primary/10 p-3">
                         <div className="flex items-center gap-2">
                           <Ticket className="h-5 w-5 text-primary" />
-                          <span className="font-medium text-foreground">General Admission</span>
+                          <span className="font-medium text-foreground">
+                            General Admission
+                          </span>
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground">
@@ -165,11 +224,27 @@ export default function EventDetailPage() {
                       size="lg"
                       className="w-full bg-primary text-lg text-primary-foreground hover:bg-primary/90"
                     >
-                      <Link href={`/tickets/${event.id}/checkout`}>Buy Tickets</Link>
+                      <Link href={`/tickets/${event.id}/checkout`}>
+                        Buy Tickets
+                      </Link>
                     </Button>
 
+                    <div className="mt-3">
+                      <AddToCart
+                        item={{
+                          id: event.id,
+                          title: event.title,
+                          price: event.price,
+                          currency: event.currency,
+                          image: event.image,
+                        }}
+                      />
+                    </div>
+
                     <div className="space-y-2 border-t border-border pt-4">
-                      <p className="text-sm font-medium text-foreground">Event Highlights:</p>
+                      <p className="text-sm font-medium text-foreground">
+                        Event Highlights:
+                      </p>
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         <li>✓ Instant ticket confirmation</li>
                         <li>✓ Mobile ticket access</li>
@@ -187,5 +262,5 @@ export default function EventDetailPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
