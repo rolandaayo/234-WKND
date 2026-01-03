@@ -1,10 +1,10 @@
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { MapPin, ArrowRight } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { cn } from "@/lib/utils"
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { MapPin, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function HomePage() {
   const featuredEvents = [
@@ -35,7 +35,7 @@ export default function HomePage() {
       image: "/placeholder.svg?key=42lga",
       tag: "FEATURED",
     },
-  ]
+  ];
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -43,8 +43,22 @@ export default function HomePage() {
 
       <main className="flex-1">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-4">
+          {/* Enhanced Background with Multiple Layers */}
           <div className="absolute inset-0 z-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[radial-gradient(circle_at_center,var(--secondary)_0%,var(--primary)_50%,transparent_70%)] opacity-10 blur-[120px]" />
+            {/* Base gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 via-transparent to-amber-900/20" />
+
+            {/* Radial gradient for depth */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_40%)] opacity-15 blur-[100px]" />
+
+            {/* Secondary radial gradient */}
+            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[radial-gradient(circle,var(--accent)_0%,transparent_60%)] opacity-10 blur-[80px]" />
+
+            {/* Additional depth with scattered light effects */}
+            <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-[radial-gradient(circle,var(--primary)_0%,transparent_50%)] opacity-8 blur-[60px]" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-7xl w-full">
@@ -60,7 +74,8 @@ export default function HomePage() {
                 <span className="text-accent italic">Nights.</span>
               </h1>
               <p className="mt-8 max-w-xl text-pretty text-sm font-medium leading-relaxed text-muted-foreground uppercase tracking-widest opacity-80">
-                Curating the world's most exclusive cultural events. From underground raves to high-art festivals.
+                Curating the world's most exclusive cultural events. From
+                underground raves to high-art festivals.
               </p>
               <div className="mt-12 flex flex-col items-center gap-6 sm:flex-row">
                 <Button
@@ -83,7 +98,7 @@ export default function HomePage() {
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
-            <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-white" />
+            <div className="w-px h-20 bg-gradient-to-b from-transparent to-white" />
           </div>
         </section>
 
@@ -97,7 +112,8 @@ export default function HomePage() {
                   Experiences
                 </h2>
                 <p className="mt-6 text-xs font-bold uppercase tracking-widest text-muted-foreground leading-loose">
-                  Our editors' hand-picked selection of the most anticipated events worldwide this season.
+                  Our editors' hand-picked selection of the most anticipated
+                  events worldwide this season.
                 </p>
               </div>
               <Button
@@ -114,8 +130,14 @@ export default function HomePage() {
 
             <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
               {featuredEvents.map((event, i) => (
-                <div key={event.id} className={cn("group relative animate-fade-up", i === 1 && "md:translate-y-20")}>
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-secondary/20">
+                <div
+                  key={event.id}
+                  className={cn(
+                    "group relative animate-fade-up",
+                    i === 1 && "md:translate-y-20"
+                  )}
+                >
+                  <div className="relative aspect-4/5 overflow-hidden rounded-3xl bg-secondary/20">
                     <Image
                       src={event.image || "/placeholder.svg"}
                       alt={event.title}
@@ -140,7 +162,9 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="mt-6 flex items-center justify-between px-2">
-                    <span className="text-xl font-black text-primary">{event.price}</span>
+                    <span className="text-xl font-black text-primary">
+                      {event.price}
+                    </span>
                     <Button
                       variant="outline"
                       className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all bg-transparent"
@@ -161,10 +185,15 @@ export default function HomePage() {
               Ready to Experience Something Unforgettable?
             </h2>
             <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Join thousands of event-goers who trust 234 WKND for their ticket needs. Secure, fast, and reliable.
+              Join thousands of event-goers who trust 234 WKND for their ticket
+              needs. Secure, fast, and reliable.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+              >
                 <Link href="/tickets">Get Started</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
@@ -177,5 +206,5 @@ export default function HomePage() {
 
       <Footer />
     </div>
-  )
+  );
 }

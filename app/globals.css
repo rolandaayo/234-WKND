@@ -4,25 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated theme tokens to Green, Dark Yellow, and Blue palette with luxury dark base */
-  --background: oklch(0.05 0 0);
+  /* Updated theme tokens to Green, Dark Yellow, and Blue palette with sophisticated dark base */
+  --background: oklch(0.12 0.02 240); /* Rich dark blue-gray instead of pure black */
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.1 0.01 0);
+  --card: oklch(0.15 0.02 240);
   --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.1 0.01 0);
+  --popover: oklch(0.15 0.02 240);
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.72 0.18 145); /* Elegant Emerald Green */
   --primary-foreground: oklch(0.1 0 0);
   --secondary: oklch(0.2 0.02 240); /* Deep Luxury Blue */
   --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.15 0.01 0);
+  --muted: oklch(0.18 0.02 240);
   --muted-foreground: oklch(0.65 0 0);
   --accent: oklch(0.78 0.15 85); /* Rich Dark Yellow / Gold */
   --accent-foreground: oklch(0.1 0 0);
   --destructive: oklch(0.58 0.25 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0.02 0 / 0.5);
-  --input: oklch(0.2 0.02 0 / 0.5);
+  --border: oklch(0.2 0.02 240 / 0.5);
+  --input: oklch(0.2 0.02 240 / 0.5);
   --ring: oklch(0.72 0.18 145);
   --chart-1: oklch(0.72 0.18 145); /* Green */
   --chart-2: oklch(0.78 0.15 85); /* Yellow */
@@ -30,13 +30,13 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 1rem; /* More modern, larger radius */
-  --sidebar: oklch(0.18 0 0);
+  --sidebar: oklch(0.18 0.02 240);
   --sidebar-foreground: oklch(0.98 0 0);
   --sidebar-primary: oklch(0.65 0.19 40);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.25 0 0);
+  --sidebar-accent: oklch(0.25 0.02 240);
   --sidebar-accent-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-border: oklch(0.25 0.02 240);
   --sidebar-ring: oklch(0.65 0.19 40);
 }
 
