@@ -15,58 +15,34 @@ Built with <strong>Next.js</strong> and <strong>Tailwind CSS</strong> for speed,
 
 ![+234 WKND Desktop Demo](./readme-images/readme-1.png "Desktop Demo")
 
-### 🚀 Tech Stack
-
-- Next.js – React framework for production
-- Tailwind CSS – Utility-first styling
-- Responsive Design – Optimized for mobile & desktop
-- Modern UI – Event-centric, nightlife aesthetic
-
-### 📦 Prerequisites
+### Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-- Node.js (v16+ recommended)
+* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-### ⚙️ Installation
+### Installing Ecomerce
 
-To install <strong>+234 WKND</strong>, run this command on your git bash:
+To install **E-commerce Store**, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
-git clone https://github.com/rolandaayo/234WKND.git
+sudo git clone https://github.com/rolandaayo/234-WKND.git
+```
+
 Windows:
 
-bash
-Copy code
-git clone https://github.com/rolandaayo/234WKND.git
-Then install dependencies and start the development server:
+```bash
+git clone https://github.com/rolandaayo/234-WKND.git
+```
 
-bash
-Copy code
-npm install
-npm run dev
-Open <code>http://localhost:3000</code> in your browser.
+## 💬 Contact
 
-🧠 Project Purpose
-+234 WKND is more than an event website — it’s a digital extension of nightlife culture, built to:
+If you have an offer, opportunity, or introduction that might make my life more interesting, email me at ibiwoyeroland@gmail.com.
 
-Promote party events and experiences
+For the reasons stated above, I'll only respond to proposals that are matched for my schedule and interests.
 
-Build anticipation before each WKND
+### License
 
-Showcase visuals, themes, and vibes
-
-Create a recognizable party brand online
-
-💬 Contact
-If you have an offer, opportunity, or collaboration idea that aligns with the +234 WKND vision,
-email me at <strong>ibiwoyeroland@gmail.com</strong>.
-
-For the reasons stated above, only relevant proposals will receive a response.
-
-📄 License
-This project is <strong>free to use</strong> and does not contain any license.
-
+This project is **free to use** and does not contains any license.
