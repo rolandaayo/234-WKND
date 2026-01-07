@@ -1,46 +1,72 @@
 <div align="center">
-  <h2 align="center">House Hunting Mobile App</h2>
+  <h2 align="center">+234 WKND</h2>
 
-This is a fully functional house hunting mobile app <br/> Built using React Native and Node.js
+A web experience built for <strong>music, culture, and unforgettable party nights</strong> in Nigeria 🇳🇬  
+Designed to showcase events, vibes, and community around the +234 WKND movement.
+
+Built with <strong>Next.js</strong> and <strong>Tailwind CSS</strong> for speed, performance, and clean UI.
 
 <a href="#"><strong>➥ Live Demo</strong></a>
-
 </div>
 
 <br />
 
-### Demo Screeshots
+### 🎉 Demo Screenshots
 
-![Micro Desktop Demo](./readme-images/readme-1.png "Desktop Demo")
+![+234 WKND Desktop Demo](./readme-images/readme-1.png "Desktop Demo")
 
-### Prerequisites
+### 🚀 Tech Stack
+
+- Next.js – React framework for production
+- Tailwind CSS – Utility-first styling
+- Responsive Design – Optimized for mobile & desktop
+- Modern UI – Event-centric, nightlife aesthetic
+
+### 📦 Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
 - [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+- Node.js (v16+ recommended)
 
-### Installing Househuntmadeeasy
+### ⚙️ Installation
 
-To install **Househuntmadeeasy**, run this command on your git bash:
+To install <strong>+234 WKND</strong>, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/rolandaayo/Househuntmadeeasy.git
-```
-
+git clone https://github.com/rolandaayo/234WKND.git
 Windows:
 
-```bash
-git clone https://github.com/rolandaayo/Househuntmadeeasy.git
-```
+bash
+Copy code
+git clone https://github.com/rolandaayo/234WKND.git
+Then install dependencies and start the development server:
 
-## 💬 Contact
+bash
+Copy code
+npm install
+npm run dev
+Open <code>http://localhost:3000</code> in your browser.
 
-If you have an offer, opportunity, or introduction that might make my life more interesting, email me at ibiwoyeroland@gmail.com.
+🧠 Project Purpose
++234 WKND is more than an event website — it’s a digital extension of nightlife culture, built to:
 
-For the reasons stated above, I'll only respond to proposals that are matched for my schedule and interests.
+Promote party events and experiences
 
-### License
+Build anticipation before each WKND
 
-This project is **free to use** and does not contains any license.
+Showcase visuals, themes, and vibes
+
+Create a recognizable party brand online
+
+💬 Contact
+If you have an offer, opportunity, or collaboration idea that aligns with the +234 WKND vision,
+email me at <strong>ibiwoyeroland@gmail.com</strong>.
+
+For the reasons stated above, only relevant proposals will receive a response.
+
+📄 License
+This project is <strong>free to use</strong> and does not contain any license.
+
