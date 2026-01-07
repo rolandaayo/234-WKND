@@ -21,9 +21,9 @@ Before you begin, ensure you have met the following requirements:
 
 * [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-### Installing Ecomerce
+### Installing 234 WKND Web App
 
-To install **E-commerce Store**, run this command on your git bash:
+To install **234 WKND**, run this command on your git bash:
 
 Linux and macOS:
 
